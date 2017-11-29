@@ -1,0 +1,11 @@
+{
+  "name": "snippethandler",
+  "version": "1.0.0",
+  "description": "handle vscode snippets",
+  "main": "index.js",
+  "bin": {
+    "snip": "./index.js"
+  },
+  "author": "vibhor agrawal",
+  "license": "MIT"
+}
