@@ -17,14 +17,13 @@ co(function* () {
         body = body.split('\n');
         if (json[name]) {
             json[name].prefix = prefix;
-            json[name].body = body;
             json[name].description = description;
+            json[name].body = body;
         }
         else {
             json[name] = {};
             json[name].prefix = prefix
             json[name].description = description;
-            json[name].body = body;
         }
         let file = JSON.stringify(json, null, "\t");
         fs.writeFile('C://Users//pc//AppData//Roaming//Code//User//snippets//javascript.json', file, (err) => {
