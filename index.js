@@ -1,4 +1,4 @@
-#! /usr/bin / env node
+#!/usr/bin/env node
 let co = require('co');
 let prompt = require('co-prompt');
 let commander = require('commander');
