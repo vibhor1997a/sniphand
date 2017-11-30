@@ -28,17 +28,17 @@ co(function* () {
         let file = JSON.stringify(json, null, "\t");
         fs.writeFile('C://Users//pc//AppData//Roaming//Code//User//snippets//javascript.json', file, (err) => {
             if (!err) {
-                console.log(chalk.green("Success!"));
+                console.log(chalk.greenBright("Success!"));
                 process.exit(0);
             }
             else {
-                console.log(chalk.red('Error Writing file!'));
+                console.log(chalk.redBright('Error Writing file!'));
                 process.exit(2);
             }
         });
     }
     else {
-        console.log(chalk.red("Invalid Input!"));
+        console.log(chalk.redBright("Invalid Input!"));
         process.exit(1);
     }
 });
