@@ -28,7 +28,7 @@ co(function* () {
         let file = JSON.stringify(json, null, "\t");
         fs.writeFile('C://Users//pc//AppData//Roaming//Code//User//snippets//javascript.json', file, (err) => {
             if (!err) {
-                console.log(chalk.greenBright("Success!"));
+                console.log(chalk.green("Success!"));
                 process.exit(0);
             }
             else {
