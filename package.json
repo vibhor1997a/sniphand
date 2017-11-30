@@ -1,10 +1,10 @@
 {
-  "name": "snip",
+  "name": "sniphand",
   "version": "1.0.0",
   "description": "handle vscode snippets",
   "main": "index.js",
   "bin": {
-    "snip": "./index.js"
+    "sniphand": "./index.js"
   },
   "author": "vibhor agrawal",
   "license": "MIT",
@@ -12,5 +12,9 @@
     "co": "^4.6.0",
     "co-prompt": "^1.0.0",
     "commander": "^2.12.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vibhor1997a/sniphand.git"
   }
 }
