@@ -1,6 +1,9 @@
 #! /usr/bin / env node
 let co = require('co');
 let prompt = require('co-prompt');
+let commander = require('commander');
+let version=require('./package.json').version;
+commander.version(version).parse(process.argv);
 co(function* () {
     let name = yield prompt('Name for the snippet: ');
     let prefix = yield prompt('prefix for the snippet: ');

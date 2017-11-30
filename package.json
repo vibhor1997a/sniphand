@@ -1,5 +1,5 @@
 {
-  "name": "snippethandler",
+  "name": "snip",
   "version": "1.0.0",
   "description": "handle vscode snippets",
   "main": "index.js",
