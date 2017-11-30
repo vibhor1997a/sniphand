@@ -2,7 +2,8 @@
 let co = require('co');
 let prompt = require('co-prompt');
 let commander = require('commander');
-let version=require('./package.json').version;
+let chalk = require('chalk');
+let version = require('./package.json').version;
 commander.version(version).parse(process.argv);
 co(function* () {
     let name = yield prompt('Name for the snippet: ');
@@ -28,17 +29,17 @@ co(function* () {
         let file = JSON.stringify(json, null, "\t");
         fs.writeFile('C://Users//pc//AppData//Roaming//Code//User//snippets//javascript.json', file, (err) => {
             if (!err) {
-                console.log("Success!");
+                console.log(chalk.green("Success!"));
                 process.exit(0);
             }
             else {
-                console.log('Error Writing file!');
-                process.exit(1);
+                console.log(chalk.red('Error Writing file!'));
+                process.exit(2);
             }
         });
     }
     else {
-        console.log("Invalid Input!");
+        console.log(chalk.red("Invalid Input!"));
         process.exit(1);
     }
 });
