@@ -10,23 +10,25 @@ co(function* () {
     let prefix = yield prompt('prefix for the snippet: ');
     let bodyPath = yield prompt('path for the file containing body:\n');
     let description = yield prompt('description for the snippet: ');
+    let path = yield prompt("path for the language's json file:\n");
     let fs = require('fs');
-    let json = require('C://Users//pc//AppData//Roaming//Code//User//snippets//javascript.json', 'utf-8');
+    let json = require(path, 'utf-8');
     if (fs.existsSync(bodyPath)) {
         let body = fs.readFileSync(bodyPath, 'utf-8');
         body = body.split('\n');
         if (json[name]) {
             json[name].prefix = prefix;
-            json[name].description = description;
             json[name].body = body;
+            json[name].description = description;
         }
         else {
             json[name] = {};
             json[name].prefix = prefix
+            json[name].body = body;
             json[name].description = description;
         }
         let file = JSON.stringify(json, null, "\t");
-        fs.writeFile('C://Users//pc//AppData//Roaming//Code//User//snippets//javascript.json', file, (err) => {
+        fs.writeFile(path, file, (err) => {
             if (!err) {
                 console.log(chalk.greenBright("Success!"));
                 process.exit(0);
